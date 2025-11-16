@@ -16,16 +16,24 @@ class Lab7Page extends StatelessWidget {
         fit: StackFit.expand,
         children: <Widget>[
           // ЖОВТИЙ ФОН: Займає весь простір Stack (найнижчий шар)
-          Container(color: Colors.yellow),
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            height: a + b + c,
+            child: Container(color: Colors.yellow),
+          ),
 
           // ЧЕРВОНИЙ КОНТЕЙНЕР
-          Positioned.fill(
+          Positioned(
             left: a,
             top: a,
+            right: 0,
+            height: b + c,
             child: Container(
               color: Colors.red,
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.only(top: 4),
+              padding: const EdgeInsets.only(top: 6),
               child: const Text(
                 'Hello',
                 style: TextStyle(
@@ -38,22 +46,41 @@ class Lab7Page extends StatelessWidget {
           ),
 
           // СИНІЙ КОНТЕЙНЕР:
-          Positioned.fill(
+          Positioned(
             left: a + b, // Відступ 'a' від лівого краю
             top: a + b, // Відступ 'a' від верхнього краю
-            child: Container(color: Colors.blue),
+            height: c,
+            right: 0,
+            //child: Container(color: Colors.blue),
+            child: Container(
+              color: Colors.blue,
+              child: Padding(
+                padding: EdgeInsets.all(4),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Text(
+                      'Flutter',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
 
           // 4. ТЕКСТ 'Flutter': Позиціонується внизу праворуч, під синім контейнером
           // Його положення: внизу (c/2) та справа (a/2)
-          Positioned(
+          /*Positioned(
             right: 8,
             bottom: 8,
             child: const Text(
               'Flutter',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
-          ),
+          ),*/
         ],
       ),
     );
