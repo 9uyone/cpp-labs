@@ -69,13 +69,16 @@ class Lab8Page extends StatelessWidget {
               ), // Зменшив відступ для екрана
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // 3. Третій блок (використовуємо наш новий віджет)
-                  Lab8Block(
-                    backgroundColor: Colors.green.shade200,
-                    blockHeight: 100, // Висота 100px
-                    textContent: '''Душу, тіло ми положим за нашу свободу.
+                  ConstrainedBox(
+                    constraints: BoxConstraints.tightFor(width: 300),
+                    child: Lab8Block(
+                      backgroundColor: Colors.green.shade200,
+                      blockHeight: 100, // Висота 100px
+                      textContent: '''Душу, тіло ми положим за нашу свободу.
 І покажем, що ми, браття, козацького роду!''',
+                    ),
                   ),
                   const SizedBox(width: 8), // Відступ від правого краю
                 ],
