@@ -15,10 +15,7 @@ class HomePage extends StatelessWidget {
         'title': 'Лаба 7: RichText, Stack, Positioned',
         'page': const Lab7Page(),
       },
-      {
-        'title': 'Лаба 8: StatelessWidget, MaterialApp',
-        'page': const Lab8Page(),
-      },
+      {'title': 'Лаба 8: StatelessWidget', 'page': const Lab8Page()},
       {'title': 'Лаба 9: StatefulWidget', 'page': const Lab9Page()},
     ];
 

@@ -11,7 +11,7 @@ class Lab7Page extends StatelessWidget {
     const double c = 64.0;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Лаба 7: Stack та Positioned')),
+      appBar: AppBar(title: const Text('Лаба 7')),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[

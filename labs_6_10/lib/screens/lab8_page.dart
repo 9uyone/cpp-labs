@@ -35,7 +35,7 @@ class Lab8Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Лаба 8: StatelessWidget')),
+      appBar: AppBar(title: const Text('Лаба 8')),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
