@@ -3,6 +3,7 @@ import 'lab6_page.dart';
 import 'lab7_page.dart';
 import 'lab8_page.dart';
 import 'lab9_page.dart';
+import 'image_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,13 +11,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labs = [
-      {'title': 'Лаба 6: Text, Компонування класів', 'page': const Lab6Page()},
+      {'subtitle': 'Text, Компонування класів', 'page': const Lab6Page()},
       {
-        'title': 'Лаба 7: RichText, Stack, Positioned',
+        'subtitle': 'RichText, Stack, Positioned',
         'page': const Lab7Page(),
       },
-      {'title': 'Лаба 8: StatelessWidget', 'page': const Lab8Page()},
-      {'title': 'Лаба 9: StatefulWidget', 'page': const Lab9Page()},
+      {'subtitle': 'StatelessWidget', 'page': const Lab8Page()},
+      {'subtitle': ' StatefulWidget', 'page': const Lab9Page()},
+      {'subtitle': ' Image', 'page': const ImagePage()},
     ];
 
     return Scaffold(
@@ -26,9 +28,11 @@ class HomePage extends StatelessWidget {
         itemCount: labs.length,
         itemBuilder: (context, index) {
           final lab = labs[index];
+
           return ListTile(
-            title: Text(lab['title'] as String),
+            title: Text('Лаба ${index + 6}'),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            subtitle: Text(lab['subtitle'] as String),
             onTap: () {
               Navigator.push(
                 context,
